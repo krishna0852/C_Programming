@@ -1,0 +1,98 @@
+1 tab =four spaces
+string literal  and character constant not same 
+
+"h"---> string literal because its covered with double quotes 
+'h'----> character constant its covered with single quotes
+char *ptr="hello"
+*ptr='m' /* we cannot change like this because they are string constants 
+                                                                         |
+                                                                         | 
+                                                                         |
+char s[6]="hello"                                           |
+s[0]='m'   /* we can  change like this but above statement can't*/
+
+when you declare short lengh 
+eg;
+char s[8]="hello"
+h           e            l              l               o         null        null           null   
+s[0]     s[1]        s[2]         s[3]         s[4]         s[5]       s[6]          s[7]
+remaining places by defaultly filled with null characters
+
+
+writing string using puts 
+
+puts() function is a function declared in <stdio.h> library and is used to write strings to the output screen 
+also ,puts() function automatically writes a newline character after writing the string to the output screen 
+eg
+char *s="hello";
+puts(s);
+puts(s);
+o/p;
+hello
+hello
+this is newline character
+using same program with printf function ;
+char *s="hello";
+printf("%s",s);
+printf("%s",s);
+o/p;
+hellohello ;
+ 
+
+char a[10];
+printf("enter the string");
+scanf("%9s",a);/* here it will set to fill 9 charcters when you declare like this"*/
+printf("%s",a);
+
+
+
+getchar () function;
+getchar actually returns the ascii code which it is getting 
+for suppose its getting A it returns the ascii code of 65;
+
+#include<stdio.h>
+int input(char str[],int n)  /*n=5*/
+{
+int ch,i=0;                                                                                                          96,97,98,99 are assuming ascii values of   h  e   l  l 0
+while((ch=getchar())!=\'n')        /'n'----> ascii value is 10
+{                                                                           i/p: hello how are you;
+if(i<n)
+{                                                                                                                                   
+str[i++]=ch;                                    it is passing upto 5 so.........    when getchar getting character 'h' it will return ascii code and convert binary after finally it will print as 'h' , return type of getchar is ascii 
+}                                                                                                  
+str[i]='\0';                          95     96         97        98      99 ---                            h            e          l              l         o      
+return i;                           str[0]  str[1]    str[2]   str[3]  str[4]     ------>         str[0]    str[1]   str[2]     str[3]   str[4]
+}                                     1000    10001     1002     1003       1004                          1000    1001     1002      1003     1004 
+int main()
+{
+char str[1000];
+int n=input(str,5);                         /*             it is passing upto 5   n=input(str,5)   */
+printf("%d%s",n,str);
+}
+
+we want our input function to have following functionalities;
+1.it must continue to read the string even after seeing white space characters
+2.it must stop reading the string after seeing the newline character
+3.it must discard extra characters 
+4.And it must return the number of characters it stores in the character array 
+
+
+
+
+What is the difference between \n and \r?
+In windows, the \n moves to the beginning of the next line. The \r moves to the beginning of the current line, without moving to the next line.Nov 19, 2009
+
+putchar() is similar to printf function ;
+
+#include<stdio.h>
+void main()
+{
+int ch;
+for(ch='A';ch<='Z'; ch++)
+putchar(ch);
+}
+o/p;
+ABCDEFGHIJKL......................Z;
+
+Putchar : prints only a single character on the screen as the syntax tells. Printf : printf line or word on the screen. Hence when you want to display only one character on the screen the use putchar. To read a string use gets function.
+
