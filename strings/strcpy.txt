@@ -1,0 +1,25 @@
+#include<stdio.h>
+#include<string.h>
+void main()
+{
+    char str[10];
+    char str2[10];
+    printf("enter the two strings");
+    gets(str);
+    gets(str2);
+    strcpy(str,str2); /*str2 is storing into str */ 
+    printf("%s",str);
+}
+
+
+i/p 
+
+str="krishna";
+str2="teja";
+
+
+o/p: teja;
+
+in the call to strcpy(destinationstr1,sourcestr2) there is no way the strcpy will check whether the string pointed by str2 will fit in str1
+if the length of the string pointed by str2 is greater than the length of the character array str1 then it will be on undefined behaviour 
+
